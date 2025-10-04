@@ -9,17 +9,17 @@ int factorial(int number) {
 
 int main(int argc, char** argv) {
   doctest::Context context;
-  int res = context.run();
-  if (context.shouldExit()) return res;
+  int doctest_ret = context.run();
+  if (context.shouldExit()) return doctest_ret;
 
-  // Start - User's code
+  ////////////////// Start - User's code /////////////////
 
-  int client_stuff_return_code = 0;
+  int user_ret = 0;
   std::cout << "factorial(5): " << factorial(5) << std::endl;
 
-  // End - User's code
+  /////////////////// End - User's code //////////////////
 
-  return res + client_stuff_return_code;
+  return user_ret + doctest_ret;
 }
 
 TEST_CASE("testing the factorial function") {
